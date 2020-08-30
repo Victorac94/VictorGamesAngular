@@ -1,0 +1,8 @@
+<label for="room-id">Introduce un código de sala</label>
+<input id="room-id" placeholder="ID de sala" [(ngModel)]="roomId">
+<button *ngIf="!joined; else disconnect" (click)="connectToRoom()">Conectarse</button>
+<ng-template #disconnect>
+    <button class="disconnect" (click)="disconnectFromRoom()">Desconectarse</button>
+</ng-template>
+<p *ngIf="joined">Usuarios conectados: {{users?.length}}</p>
+<p *ngIf="joined && roomId">Codigo de sala: {{roomId}}</p>

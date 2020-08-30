@@ -1,0 +1,13 @@
+.app-container {
+    background: linear-gradient(to bottom, #252729, #202224);
+    min-height: 100vh;
+    padding: 1em;
+    color: white;
+
+    img {
+        width: 30px;
+        position: fixed;
+        top: 1em;
+        right: 1em;
+    }
+}

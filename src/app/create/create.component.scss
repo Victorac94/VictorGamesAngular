@@ -1,0 +1,48 @@
+@import "../../assets/css/styles.scss";
+@import "../../assets//css/spinner.css";
+
+h3 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0.6em 0;
+}
+
+.room-id {
+    font-size: 4em;
+}
+
+.spinner {
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.actions-container {
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 1em;
+    margin-top: 2em;
+
+    .role-container {
+        margin: 1em 0;
+
+        label {
+            margin-left: 0.5em;
+            font-size: 1.1em;
+        }
+
+        select {
+            font-size: 1.05em;
+            padding: 0.3em 0.4em;
+        }
+    }
+}

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'PolisCacosAngular';
+  @ViewChild('song', { static: false }) song: ElementRef;
+
+  shouldShow: boolean;
+
+  constructor(
+    private router: Router
+  ) {
+    this.shouldShow = true;
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe(value => {
+      if (value instanceof NavigationStart && value.url === '/game') {
+        // Pause audio and hide audio icon
+        this.song.nativeElement.pause();
+        this.shouldShow = false;
+
+      }
+    })
+  }
+
+  toggleMuteSong() {
+    this.song.nativeElement.muted = !this.song.nativeElement.muted;
+  }
+
 }

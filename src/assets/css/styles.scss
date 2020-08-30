@@ -1,0 +1,24 @@
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        background: none;
+        border: 1px solid #dd6a0b;
+        border-radius: 5px;
+        color: #dd6a0b;
+        font-size: 1.1em;
+        padding: 0.3em 0.4em;
+        outline: none;
+
+        &.disconnect {
+            color: #e21c1c;
+            border-color: #e21c1c;
+        }
+
+        &.next-round {
+            color: #28d822;
+            border-color: #28d822;
+        }
+    }
+}

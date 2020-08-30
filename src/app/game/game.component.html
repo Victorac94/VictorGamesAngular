@@ -1,0 +1,39 @@
+<div class="game-container">
+    <!-- Room ID -->
+    <p class="room-id">Sala ID: {{roomId}}</p>
+    <!-- Card section -->
+    <div class="card">
+        <!-- Card image -->
+        <div [ngClass]="{'img-wrapper': true, 'hide': loadingRound}">
+            <img *ngIf="card" [src]="card.image" [alt]="card.value + ' ' + card.suit" />
+        </div>
+        <!-- Spinner -->
+        <div *ngIf="loadingRound" class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+        <p *ngIf="loadingRound">Cargando ronda...</p>
+    </div>
+    <!-- Role name -->
+    <p *ngIf="roleName" class="role-name">{{roleName}}</p>
+    <p *ngIf="users">Usuarios conectados: {{users.length}}</p>
+    <!-- Action buttons -->
+    <section class="actions-container">
+        <button class="disconnect" (click)="disconnectFromRoom()">Salir</button>
+        <button *ngIf="admin" class="next-round" (click)="nextRound()">Nueva ronda</button>
+        <button *ngIf="admin" (click)="toggleRolesForm()">Opciones</button>
+    </section>
+    <!--Roles configuration -->
+    <div *ngIf="shouldShowRolesForm" class="roles-config">
+        <h3>Configuración</h3>
+        <p (click)="toggleRolesForm()">X</p>
+        <form [formGroup]="rolesForm">
+            <div class="role-container" *ngFor="let role of roles">
+                <select [id]="role" [formControlName]="role">
+                    <option *ngFor="let n of rolesOptions[role]" [ngValue]="n">{{n}}</option>
+                </select>
+                <label [for]="role">{{role | titlecase }}</label>
+            </div>
+        </form>
+    </div>
+</div>

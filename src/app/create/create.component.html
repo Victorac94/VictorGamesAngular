@@ -1,0 +1,23 @@
+<h3>Codigo de sala:</h3>
+<h3 class="room-id">{{roomId}}</h3>
+<!-- Loading spinner -->
+<div *ngIf="loadingRoomId" class="spinner">
+    <div class="lds-ripple">
+        <div></div>
+        <div></div>
+    </div>
+    <p>Cargando ID de sala...</p>
+</div>
+<p *ngIf="!loadingRoomId">Usuarios conectados: {{users?.length}}</p>
+<!--Roles configuration -->
+<form [formGroup]="rolesForm">
+    <div class="role-container" *ngFor="let role of roles">
+        <select [id]="role" [formControlName]="role">
+            <option *ngFor="let n of rolesOptions[role]" [ngValue]="n">{{n}}</option>
+        </select>
+        <label [for]="role">{{role | titlecase }}</label>
+    </div>
+</form>
+<div class="actions-container">
+    <button class="next-round" (click)="startGame()">Empezar</button>
+</div>

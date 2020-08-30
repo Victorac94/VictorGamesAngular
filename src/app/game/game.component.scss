@@ -1,0 +1,114 @@
+@import "../../assets/css/spinner.css";
+@import "../../assets/css/styles.scss";
+
+p {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    min-height: 300px;
+
+    .img-wrapper {
+        width: 60%;
+        height: auto;
+        max-width: 270px;
+        margin: 3em auto 1em auto;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        &.hide {
+            opacity: 0;
+            transition: opacity 0.1s ease-out;
+        }
+    }
+
+    .lds-ripple {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    p {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.role-name {
+    font-size: 1.4em;
+    margin: 1.5em 0;
+    text-align: center;
+}
+
+.actions-container {
+    width: calc(100vw - 2em);
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+}
+
+.roles-config {
+    background-color: #202224;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+
+    h3 {
+        font-size: 2em;
+        position: absolute;
+        top: 1em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    p {
+        text-align: right;
+        font-size: 2em;
+        margin: 0.7em;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        column-gap: 1em;
+        padding: 1em;
+
+        .role-container {
+            margin: 1em 0;
+
+            label {
+                margin-left: 0.5em;
+                font-size: 1.1em;
+            }
+
+            select {
+                font-size: 1.05em;
+                padding: 0.3em 0.4em;
+            }
+        }
+    }
+}
+
+@media (orientation: landscape) {
+    .card {
+        min-height: 150px;
+
+        .img-wrapper {
+            width: 25%;
+            height: auto;
+            margin-top: 1em;
+        }
+    }
+}

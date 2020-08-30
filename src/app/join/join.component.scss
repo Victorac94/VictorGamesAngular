@@ -1,0 +1,38 @@
+p {
+    margin: 1em 0;
+}
+
+label {
+    font-size: 1.5em;
+    display: block;
+    margin: 0.6em 0;
+}
+
+input {
+    display: block;
+    border: 1.1px solid #d36d0d;
+    border-radius: 4px;
+    outline: none;
+    font-size: 1.05em;
+    padding: 0.3em 0.5em;
+    margin: 0.5em 0;
+}
+
+button {
+    background: none;
+    border: 1px solid #28d822;
+    border-radius: 5px;
+    color: #28d822;
+    font-size: 1.1em;
+    padding: 0.3em 0.4em;
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    outline: none;
+
+    &.disconnect {
+        color: #e21c1c;
+        border-color: #e21c1c;
+    }
+}
