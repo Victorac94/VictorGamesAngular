@@ -1,11 +1,10 @@
 <div class="app-container">
   <router-outlet></router-outlet>
-  <audio autoplay loop #song>
+  <audio loop #song>
     <source src="../../assets/audio/Ragtime_piano.mp3" type="audio/mpeg">
     Tu navegador no soporta reproducción de audio
   </audio>
-  <img *ngIf="song.muted && shouldShow" src="../assets/icons/volume-mute-solid.svg" (click)="toggleMuteSong()"
-    alt="mute">
-  <img *ngIf="!song.muted && shouldShow" src="../assets/icons/volume-up-solid.svg" (click)="toggleMuteSong()"
+  <img *ngIf="song.paused && shouldShow" src="../assets/icons/play-solid.svg" (click)="togglePlayStopSong()" alt="mute">
+  <img *ngIf="!song.paused && shouldShow" src="../assets/icons/pause-solid.svg" (click)="togglePlayStopSong()"
     alt="unmute">
 </div>

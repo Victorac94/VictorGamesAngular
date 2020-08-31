@@ -28,8 +28,12 @@ export class AppComponent {
     })
   }
 
-  toggleMuteSong() {
-    this.song.nativeElement.muted = !this.song.nativeElement.muted;
+  togglePlayStopSong() {
+    if (this.song.nativeElement.paused) {
+      this.song.nativeElement.play();
+    } else {
+      this.song.nativeElement.pause();
+    }
   }
 
 }
